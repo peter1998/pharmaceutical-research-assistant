@@ -110,9 +110,9 @@ class AppSettings(BaseSettings):
     # Logging
     log_level: str = Field(default="INFO", description="Logging level")
     log_format: str = Field(
-        default="{time:YYYY-MM-DD HH:mm:ss} | {level} | {name}:{function}:{line} | {message}",
-        description="Log message format"
-    )
+    default="%(asctime)s | %(levelname)s | %(name)s:%(funcName)s:%(lineno)d | %(message)s",
+    description="Log message format"
+)
 
     class Config:
         env_file = ".env"
